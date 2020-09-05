@@ -1,0 +1,233 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Todo-Application</title>
+	
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<!--	database -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+	
+	
+	
+	<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC3g01cE0fqoPwxfcO6xA2BsJH4sUidjzE",
+    authDomain: "dbconnectapp-6117e.firebaseapp.com",
+    databaseURL: "https://dbconnectapp-6117e.firebaseio.com",
+    projectId: "dbconnectapp-6117e",
+    storageBucket: "dbconnectapp-6117e.appspot.com",
+    messagingSenderId: "417861214971",
+    appId: "1:417861214971:web:177bd5200a23e89354c65e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+		
+		
+</script>
+	
+	
+	
+	 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500&display=swap" rel="stylesheet">
+
+	
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+
+	<style>
+
+	
+		.btn{
+			background-color: navy;
+		}
+	
+	*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	height: 100%;
+	background: #111;
+	text-align: center;
+	justify-content: center;
+	
+}
+h1{
+	font-size: 3em;
+	font-weight: 50;
+	margin: 1rem 0 3rem;
+	text-align: center;
+	color: #fff;
+	font-family: 'Hind Siliguri', sans-serif;
+	letter-spacing: 5px;
+	cursor: pointer;
+}
+		
+	
+
+h1 span{
+	transition: 0.5s;
+	
+}
+
+h1:hover span:nth-child(1){
+	margin-right: 10px;
+}
+h1:hover span:nth-child(1):after{
+	content: "-";
+}
+
+h1:hover span:nth-child(2){
+	margin-left: 40px;
+}
+
+h1:hover span{
+	color: lightblue;
+	text-shadow:0 0 10px #fff,
+		        0 0 20px #fff ,
+		        0 0 40px #fff,
+		        0 0 80px #fff,
+		        0 0 120px #fff,
+		        0 0 160px #fff;
+		      
+	
+}	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+.styling{
+	color: lightseagreen;
+	font-weight: 800;
+	
+}
+		.input{
+				
+		
+	padding: 0.5rem 1rem;
+	height: 30px;
+	outline: none;
+	background-color: #fff;
+	font-size: 1.15rem;
+	width: 200px;
+	margin: 0.25rem;
+	border-radius: 25px;
+	border: none;
+		}
+	
+		.addBtn{
+
+	height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 25px;
+	outline: none;
+	background-color:lime ;
+	color:#fff ;
+	margin: 0.25rem;
+	cursor: pointer;
+		}
+		
+		
+		.addBtn:hover{
+	opacity: 0.7;
+	
+}
+	
+		.delAllBtn{
+			
+		height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 25px;
+	outline: none;
+	background-color:#E00 ;
+	color:#fff ;
+	margin: 0.25rem;
+	cursor: pointer;
+			
+			
+		}
+		
+		.btn{
+			
+			width: 70px;
+			border: none;
+			outline: none;
+			background-color: cornflowerblue;
+			color: white;
+			cursor: pointer;
+			border-radius: 3px;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			
+			
+		}
+		.btnEdit{
+			margin: 10px;
+			width: 70px;
+			border: none;
+			outline: none;
+			background-color:darkslateblue;
+			color: white;
+			cursor: pointer;
+			border-radius: 3px;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			
+		}
+	
+		#list{
+			text-decoration: underline;
+			color: white;
+		}
+	
+	</style>
+	
+	
+	
+	
+	
+	
+	
+	
+<body>
+	
+	<h1><span class="styling">TODO</span> LIST</h1>
+<!--	TODO APP==================================-->
+	<div>
+	<input placeholder="Add Item" type="text" id="todo" class="input">
+		<button onClick="addTodo()" class="addBtn"><i class="fas fa-plus"></i></button>
+		<button onClicK="deleteAll()" class="delAllBtn"><i class="fas fa-trash"></i></button>
+	</div>
+	
+	<div >
+	<ul id="list">
+<!--		if html <li><button>Delete</button></li>-->
+		
+		
+		</ul>
+	
+	</div>
+	
+	
+<!--	REALTIME DATABASE jub jub data ayegaa tou automatically fronred update
+refresh kerkai page mangwaanai ki zarorat nahi perai gi-->
+	
+	
+</body>
+	<script src="app.js"></script>
+</html>
